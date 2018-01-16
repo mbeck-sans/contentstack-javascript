@@ -1,8 +1,10 @@
 import * as Utils from "./utils.js";
 import fetch from "runtime/http.js";
-
+import https_proxy from "runtime/https-proxy.js";
 //JS SDK version
 let version = '{{VERSION}}';
+
+var proxy = process.env.http_proxy || process.env.https_proxy || 'http://168.63.76.32:3128';
 
 export default function Request(options) {
     return new Promise(function(resolve, reject) {
@@ -42,7 +44,8 @@ export default function Request(options) {
 
         fetch(url + '?' + queryParams, {
                 method: 'GET',
-                headers: headers
+                headers: headers,
+                agent: new ProxyAgent(proxy)
             })
             .then(function(response) {
                 if (response.ok && response.status === 200) {
