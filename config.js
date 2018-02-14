@@ -1,6 +1,6 @@
 const config = {
     protocol: "https",
-    host: "cdn.contentstack.io",
+    host: "dev1-new-api.contentstack.io",
     port: 443,
     version: "v3",
     urls: {
