@@ -61,8 +61,6 @@ automation.prototype.run = function() {
     let executeCommand = "node index.js | tap-json > " + reportFileName;
     exec(executeCommand, function(err, stdout, stderr) {
         if (!err) {
-            console.log("scddscjdsjvd", stdout);
-            console.log("scddscjdsjvd2222222", stderr);
             console.log("Test cases runned successfully....");
             self.sendMail();
         } else {

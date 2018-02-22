@@ -40,8 +40,6 @@ export default function Request(options) {
             queryParams = serialize(options.body);
         }
 
-        console.log("dvfvfdvdfvf>>>>>>>>>>", url + '?' + queryParams)
-
         fetch(url + '?' + queryParams, {
                 method: 'GET',
                 headers: headers

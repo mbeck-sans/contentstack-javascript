@@ -2,12 +2,12 @@
 
 module.exports = {
     stack: {
-        "api_key": "bltc7718db03fe0a0c7",
-        "access_token": "bltc9e516fd46206d51",
+        "api_key": "bltc0a6a8609e24c651",
+        "access_token": "blt882b9ae3ee9af2e1",
         "environment": "development"
     },
-    host: "dev1-new-api.contentstack.io",
-    url: "https://dev1-new-api.contentstack.io/v3",
+    host: "stag-new-api.contentstack.io",
+    url: "https://stag-cdn.contentstack.io/v3",
     // runscope: {
     //     url: "https://api.runscope.com/radar/76730163-fab9-4554-95c1-7ba75aaa2628/trigger?runscope_environment=1f5114ea-7a2d-4adf-9fd3-abc885c47783",
     //     username: "jayesh.sawant@raweng.com",
