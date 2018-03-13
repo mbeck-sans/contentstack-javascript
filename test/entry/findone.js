@@ -506,7 +506,7 @@ test('findOne:  .only() - Single String Parameter', function(assert) {
         .only('title')
         .toJSON().findOne()
         .then(function success(entry) {
-            var flag = (entry && Object.keys(entry).length === 3 && "title" in entry && "uid" in entry && "url" in entry);
+            var flag = (entry && Object.keys(entry).length === 4 && "title" in entry && "uid" in entry && "url" in entry);
             assert.ok(flag, 'entry with the field title in the resultset');
             assert.end();
         }, function error(err) {
@@ -523,7 +523,7 @@ test('findOne:  .only() - Multiple String Parameter', function(assert) {
         .only('BASE', 'title')
         .toJSON().findOne()
         .then(function success(entry) {
-            var flag = (entry && Object.keys(entry).length === 3 && "title" in entry && "uid" in entry && "url" in entry);
+            var flag = (entry && Object.keys(entry).length === 4 && "title" in entry && "uid" in entry && "url" in entry);
             assert.ok(flag, 'entry with the field title in the resultset');
             assert.end();
         }, function error(err) {
@@ -540,7 +540,7 @@ test('findOne:  .only() - Array Parameter', function(assert) {
         .only(['title', 'url'])
         .toJSON().findOne()
         .then(function success(entry) {
-            var flag = (entry && Object.keys(entry).length === 3 && "title" in entry && "url" in entry && "uid" in entry);
+            var flag = (entry && Object.keys(entry).length === 4 && "title" in entry && "url" in entry && "uid" in entry);
             assert.ok(flag, 'entry with the field title,url in the resultset');
             assert.end();
         }, function error(err) {

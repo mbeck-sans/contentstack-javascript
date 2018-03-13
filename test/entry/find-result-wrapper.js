@@ -861,7 +861,7 @@ test('.only() - Single String Parameter', function(assert) {
             // assert.ok("entries" in result, 'Entries key present in the resultset');
             var flag = entries[0].every(function(entry) {
                 entry = entry.toJSON();
-                return (entry && Object.keys(entry).length === 3 && "title" in entry && "uid" in entry && "url" in entry);
+                return (entry && Object.keys(entry).length === 4 && "title" in entry && "uid" in entry && "url" in entry);
             });
             assert.ok(flag, 'entries with the field title in the resultset');
             assert.end();
@@ -882,7 +882,7 @@ test('.only() - Multiple String Parameter', function(assert) {
             // assert.ok("entries" in result, 'Entries key present in the resultset');
             var flag = entries[0].every(function(entry) {
                 entry = entry.toJSON();
-                return (entry && Object.keys(entry).length === 3 && "title" in entry && "uid" in entry && "url" in entry);
+                return (entry && Object.keys(entry).length === 4 && "title" in entry && "uid" in entry && "url" in entry);
             });
             assert.ok(flag, 'entries with the field title in the resultset');
             assert.end();
@@ -903,7 +903,7 @@ test('.only() - Array Parameter', function(assert) {
             // assert.ok("entries" in result, 'Entries key present in the resultset');
             var flag = entries[0].every(function(entry) {
                 entry = entry.toJSON();
-                return (entry && Object.keys(entry).length === 3 && "title" in entry && "url" in entry && "uid" in entry);
+                return (entry && Object.keys(entry).length === 4 && "title" in entry && "url" in entry && "uid" in entry);
             });
             assert.ok(flag, 'entries with the field title,url in the resultset');
             assert.end();
@@ -936,7 +936,7 @@ test('.only() - For the reference - String', function(assert) {
                 } else {
                     _flag = false;
                 }
-                return (_flag && entry && Object.keys(entry).length === 3 && "reference" in entry && "uid" in entry && "url" in entry);
+                return (_flag && entry && Object.keys(entry).length === 4 && "reference" in entry && "uid" in entry && "url" in entry);
             });
             assert.end();
         }, function error(err) {
@@ -968,7 +968,7 @@ test('.only() - For the reference - Array', function(assert) {
                 } else {
                     _flag = false;
                 }
-                return (_flag && entry && Object.keys(entry).length === 3 && "reference" in entry && "uid" in entry && "url" in entry);
+                return (_flag && entry && Object.keys(entry).length === 4 && "reference" in entry && "uid" in entry && "url" in entry);
             });
             assert.end();
         }, function error(err) {
