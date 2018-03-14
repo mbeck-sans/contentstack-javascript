@@ -582,6 +582,7 @@ test('.count()', function(assert) {
         .toJSON()
         .find()
         .then(function success(count) {
+            console.log("sabdshcdshjcdsc>>>>>>>>>")
             // assert.ok("entries" in result, 'Entries key present in the resultset');
             assert.ok(count, 'Entries present in the resultset');
             assert.end();
@@ -604,8 +605,6 @@ test('.or() - Query Objects', function(assert) {
         .toJSON()
         .find()
         .then(function success(entries) {
-            // assert.ok("entries" in result, 'Entries key present in the resultset');
-            // assert.equal(Utils.isEntriesPublished(entries[0], Stack.environment_uid, 'en-us'), true, "Entries present in the resultset are published.");
             assert.ok(entries[0].length, 'Entries present in the resultset');
             assert.ok(entries[0].length, 2, 'two entries present in the resultset');
             if (entries && entries.length && entries[0].length) {
@@ -1231,7 +1230,6 @@ test('.except() - For the reference - Array', function(assert) {
 
 //Modular Block Testcases//
 
-
 test('.lessThan()', function(assert) {
     var Query = Stack.ContentType(contentTypes.source).Query(),
         field = 'modular_blocks.test1.number',
@@ -1249,7 +1247,7 @@ test('.lessThan()', function(assert) {
                     prev = entry['modular_blocks'][0]['test1']['number'];
                     return flag;
                 });
-                assert.equal(_entries, true, "entries sorted descending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted descending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1278,7 +1276,7 @@ test('.lessThanOrEqualTo()', function(assert) {
                     prev = entry['modular_blocks'][0]['test1']['number'];
                     return flag;
                 });
-                assert.equal(_entries, true, "entries sorted descending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted descending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1310,7 +1308,7 @@ test('.greaterThan()', function(assert) {
                     prev = entry['modular_blocks'][0]['test1']['number'];
                     return flag;
                 });
-                assert.equal(_entries, true, "entries sorted ascending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted ascending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1340,7 +1338,7 @@ test('.greaterThanOrEqualTo()', function(assert) {
                     prev = entry['modular_blocks'][0]['test1']['number'];
                     return flag;
                 });
-                assert.equal(_entries, true, "entries sorted descending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted descending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1365,7 +1363,7 @@ test('.notEqualTo()', function(assert) {
                 var _entries = entries[0].every(function(entry) {
                     var flag = (entry['modular_blocks'][1]['test2']['single_line'] == 'Rahul');
                 });
-                assert.equal(_entries, false, "entries sorted descending on '" + "' field");
+                assert.equal(_entries, false, "Modular Block entries sorted descending on '" + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1377,27 +1375,27 @@ test('.notEqualTo()', function(assert) {
 
 
 // includeReference
-test('.includeReference() - String', function(assert) {
-    var Query = Stack.ContentType(contentTypes.source).Query();
+// test('.includeReference() - String', function(assert) {
+//     var Query = Stack.ContentType(contentTypes.source).Query();
 
-    Query
-        .includeReference('modular_blocks.test2.referenc_test')
-        .toJSON()
-        .find()
-        .then(function success(entries) {
-            // assert.ok("entries" in result, 'Entries key present in the resultset');
-            //assert.equal(Utils.isEntriesPublished(entries[0], Stack.environment_uid, 'en-us'), true, "Entries present in the resultset are published.");
-            var flag = entries[0].every(function(entry) {
-                return (entry && entry['modular_blocks'][1]['test2']['referenc_test'] && typeof entry['modular_blocks'][1]['test2']['referenc_test'] === 'object');
-            });
-            assert.equal(flag, true, 'all the present reference are included');
-            assert.end();
-        }, function error(err) {
-            console.error("error :", err);
-            assert.fail(".includeReference() - String");
-            assert.end();
-        });
-});
+//     Query
+//         .includeReference('modular_blocks.test2.referenc_test')
+//         .toJSON()
+//         .find()
+//         .then(function success(entries) {
+//             // assert.ok("entries" in result, 'Entries key present in the resultset');
+//             //assert.equal(Utils.isEntriesPublished(entries[0], Stack.environment_uid, 'en-us'), true, "Entries present in the resultset are published.");
+//             var flag = entries[0].every(function(entry) {
+//                 return (entry && entry['modular_blocks'][1]['test2']['referenc_test'] && typeof entry['modular_blocks'][1]['test2']['referenc_test'] === 'object');
+//             });
+//             assert.equal(flag, true, 'all the present reference are included');
+//             assert.end();
+//         }, function error(err) {
+//             console.error("error :", err);
+//             assert.fail(".includeReference() - String");
+//             assert.end();
+//         });
+// });
 
 
 test('.where()', function(assert) {
@@ -1426,7 +1424,7 @@ test('.equalTo()', function(assert) {
         .find()
         .then(function success(entries) {
              assert.ok(entries[0].length, 'entries present in the resultset');
-             assert.equal(entries[0].length, 2, ' three entries present in the resultset');
+             assert.equal(entries[0].length, 2, 'three entries present in the resultset');
              assert.end();
         }, function error(err) {
             console.error("error :", err);
@@ -1504,7 +1502,7 @@ test('.exists()', function(assert) {
                     prev = entry[field];
                     return flag;
                 });
-                assert.equal(_entries, true, "entries sorted descending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted descending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1531,7 +1529,7 @@ test('.notExists()', function(assert) {
                 var _entries = entries[0].every(function(entry) {
                     return (entry[field] <= prev);
                 });
-                assert.equal(_entries, true, "entries sorted descending on '" + field + "' field");
+                assert.equal(_entries, true, "Modular Block entries sorted descending on '" + field + "' field");
             }
             assert.end();
         }, function error(err) {
@@ -1618,7 +1616,7 @@ test('.regex()', function(assert) {
             var flag = entries[0].every(function(entry) {
                 return regexpObj.test(value);                
             });
-            assert.ok(flag, "regexp satisfied for all the entries in the resultset");
+            assert.ok(flag, "Modular Block regexp satisfied for all the entries in the resultset");
             assert.end();
         }, function error(err) {
             console.error("error :", err);
