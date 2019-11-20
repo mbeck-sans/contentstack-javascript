@@ -21,6 +21,9 @@ import CacheProvider from './cache-provider/index';
      *   'access_token':'stack_delivery_token',
      *    'environment':'environment_name'
      * });
+     * @example
+	 * const Stack = Contentstack.Stack({ 'api_key': "stack_api_key", 'access_token': "stack_delivery_token", 'environment': "environment_name", "region": Contentstack.Region.EU})
+     * 
      *
      * @returns {Stack}
      * @instance
