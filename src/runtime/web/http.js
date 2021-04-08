@@ -1,5 +1,5 @@
 import ES6Promise from 'es6-promise';
-import fetch from 'whatwg-fetch';
+import fetch from 'isomorphic-fetch';
 
 ES6Promise.polyfill();
 
